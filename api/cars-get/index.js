@@ -1,5 +1,5 @@
 
-const cars = require('.cars.json');
+const cars = require('../cars.json');
 
 module.exports = async function (context, req) {
     //const data = await fetch('/cars.json')
