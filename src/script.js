@@ -34,7 +34,8 @@ function addCar(newCar) {
         headers: {
             'Content-Type': 'application/json'
         },
-        body: JSON.stringify(newCar)
+        //body: JSON.stringify(newCar)
+        body: newCar
     })
         .then(response => response.json())
         .then(data => {
@@ -54,6 +55,6 @@ carForm.addEventListener('submit', event => {
     const model = document.getElementById('model').value;
     const year = document.getElementById('year').value;
     const price = document.getElementById('price').value;
-    addCar({ make, model, year, price });
+    addCar({ "make":make, "model":model, "year":year, "price":price });
     carForm.reset();
 });
