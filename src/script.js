@@ -58,3 +58,29 @@ carForm.addEventListener('submit', event => {
     addCar({ "make":make, "model":model, "year":year, "price":price });
     carForm.reset();
 });
+
+
+// Function to remove a car
+function removeCar(index) {
+    const carId = cars[index].id;
+    fetch(`https://gentle-smoke-062483f0f.5.azurestaticapps.net/api/cars-delete/${carId}`, {
+        method: 'DELETE'
+    })
+        .then(response => response.json())
+        .then(data => {
+            console.log('Success:', data);
+            //reload cars
+            // const loadCarsBtn = document.getElementById('loadCarsBtn');
+            loadCarsBtn.click();
+        })
+        .catch(error => {
+            console.error('Error:', error);
+        });
+}
+// Event delegation for remove buttons
+carList.addEventListener('click', event => {
+    if (event.target.classList.contains('btn-remove')) {
+        const index = event.target.dataset.index;
+        removeCar(index);
+    }
+});
