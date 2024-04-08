@@ -34,8 +34,7 @@ function addCar(newCar) {
         headers: {
             'Content-Type': 'application/json'
         },
-        //body: JSON.stringify(newCar)
-        body: newCar
+        body: JSON.stringify(newCar)
     })
         .then(response => response.json())
         .then(data => {
