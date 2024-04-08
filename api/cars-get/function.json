@@ -6,10 +6,9 @@
       "direction": "in",
       "name": "req",
       "methods": [
-        "get",
-        "post",
-        "delete"
-      ]
+        "get"
+      ],
+      "route": "cars"
     },
     {
       "type": "http",
