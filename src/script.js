@@ -29,6 +29,7 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 function addCar(newCar) {
+    console.log(newCar);
     fetch('https://gentle-smoke-062483f0f.5.azurestaticapps.net/api/cars-add', {
         method: 'POST',
         headers: {
@@ -54,7 +55,7 @@ carForm.addEventListener('submit', event => {
     const model = document.getElementById('model').value;
     const year = document.getElementById('year').value;
     const price = document.getElementById('price').value;
-    addCar([{ "make":make, "model":model, "year":year, "price":price }]);
+    addCar({ "make":make, "model":model, "year":year, "price":price });
     carForm.reset();
 });
 
