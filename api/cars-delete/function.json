@@ -7,7 +7,8 @@
       "name": "req",
       "methods": [
         "delete"
-      ]
+      ],
+      "route": "cars-delete/:carId"
     },
     {
       "type": "http",
