@@ -54,7 +54,7 @@ carForm.addEventListener('submit', event => {
     const model = document.getElementById('model').value;
     const year = document.getElementById('year').value;
     const price = document.getElementById('price').value;
-    addCar({ "make":make, "model":model, "year":year, "price":price });
+    addCar([{ "make":make, "model":model, "year":year, "price":price }]);
     carForm.reset();
 });
 
