@@ -29,7 +29,7 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 function addCar(newCar) {
-    console.log(newCar);
+    //console.log(newCar);
     fetch('https://gentle-smoke-062483f0f.5.azurestaticapps.net/api/cars', {
         method: 'POST',
         headers: {
