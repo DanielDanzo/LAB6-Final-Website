@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const carList = document.getElementById('carList');
     cars = [];
     loadCarsBtn.addEventListener('click', () => {
-        fetch('https://gentle-smoke-062483f0f.5.azurestaticapps.net/api/cars')
+        fetch('https://gentle-smoke-062483f0f.5.azurestaticapps.net/api/car')
             .then(response => response.json())
             .then(data => {
                 cars = data;
