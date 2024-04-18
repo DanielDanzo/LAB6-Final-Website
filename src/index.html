@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lucky-Lot Cars</title>
     <link rel="stylesheet" href="./style.css">
+    <meta name="google-signin-client_id" content="729256465959-4lhtu7qk5qikjstb3j3oe1g43jk7mfd3.apps.googleusercontent.com">
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
     <script src="script.js" defer></script>
 
 </head>
@@ -20,6 +22,7 @@
         <div class="container">
             <button id="loadCarsBtn" class="btn">Load Cars</button>
             <div id="carList" class="grid-container"></div>
+            <div class="g-signin2" data-onsuccess="onSignIn"></div>
         </div>
         <!-- add new car -->
         <div class="container">
@@ -33,6 +36,16 @@
             </form>
         </div>
 
+        <script>
+            function onSignIn(googleUser) {
+                var profile = googleUser.getBasicProfile();
+                console.log('ID: ' + profile.getId()); // Do not send to your backend! Use an ID token instead.
+                console.log('Name: ' + profile.getName());
+                console.log('Image URL: ' + profile.getImageUrl());
+                console.log('Email: ' + profile.getEmail()); // This is null if the 'email' scope is not present.
+            }
+        </script>
+
     </main>
     <footer>
         <p>&copy; 2024 Lucky-Lot Cars</p>
@@ -41,3 +54,5 @@
 </body>
 
 </html>
+
+
